@@ -1,0 +1,29 @@
+﻿
+<form ng-submit="controller.firebaseLogin()">
+    <input type="text" placeholder="email" ng-model="controller.email"/>
+    <input type="text" placeholder="password" ng-model="controller.password"/>
+    <input type="submit" />
+</form>
+
+<form ng-submit="controller.newNurse()">
+    <input type="text" placeholder="First Name" ng-model="controller.fbNurse.firstName" />
+    <input type="text" placeholder="Last Name" ng-model="controller.fbNurse.lastName" />
+    <input type="text" placeholder="Email" ng-model="controller.fbNurse.email" />
+    <input type="text" placeholder="Password" ng-model="controller.fbNurse.password" />
+    <input type="submit" />
+</form>
+
+<form ng-submit="controller.newFirebasePatient()">
+    <input type="text" placeholder="First Name" ng-model="controller.fbPatient.firstName" />
+    <input type="text" placeholder="Last Name" ng-model="controller.fbPatient.lastName" />
+    <input type="text" placeholder="Room Number" ng-model="controller.fbPatient.roomNumber" />
+    <input type="text" placeholder="Bed Number" ng-model="controller.fbPatient.bedNumber" />
+    <input type="submit" />
+</form>
+
+<form ng-submit="controller.newNotification()">
+    <input type="text" placeholder="Notification" ng-model="controller.notification.notificationType" />
+    <input type="submit" />
+</form>
+
+<button ng-click="controller.check()">Check Database</button>

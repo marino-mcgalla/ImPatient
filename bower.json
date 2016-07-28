@@ -1,0 +1,24 @@
+{
+  "name": "PatientApp",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "3.x",
+    "jquery": "2.x",
+    "jquery-validation": "1.x",
+    "jquery-validation-unobtrusive": "3.x",
+    "angular": "1.x",
+    "angular-resource": "1.x",
+    "angular-bootstrap": "1.x",
+    "angular-animate": "1.x",
+    "angular-touch": "1.x",
+    "angular-ui-router": "0.x",
+    "angular-filter": "0.5.8",
+    "moment": "2.13.0",
+    "angular-moment": "0.10.3",
+    "angular-timeago": "^0.4.3"
+  },
+  "resolutions": {
+    "angular": "1.5.7",
+    "moment": "2.13.0"
+  }
+}

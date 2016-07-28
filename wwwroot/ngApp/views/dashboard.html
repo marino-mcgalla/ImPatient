@@ -1,0 +1,39 @@
+﻿<section class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 ng-repeat="nurse in controller.nurseNames | customUnique: 'nurse'"><strong>{{nurse}}</strong></h1>
+            <ul>
+                <li class="error" ng-repeat="err in controller.validationErrors">{{err}}</li>
+            </ul>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table table-bordered table-striped">
+                    <tr>
+                        <th>Status</th>
+                        <th>Patient Name</th>
+                        <th>Room Number</th>
+                        <th>Bed Number</th>
+                        <th>Unresolved</th>
+                        <th>Messages</th>
+                    </tr>
+                    <tr ng-repeat="patient in controller.patientMessages">
+                        <td><img src="{{patient.imagePath}}" width="50" height="60" /></td>
+                        <td><a href="/details/{{patient.patient.id}}">{{patient.patient.applicationUser.firstName}} {{patient.patient.applicationUser.lastName}}</a></td>
+                        <td>{{patient.patient.roomNumber}}</td>
+                        <td>{{patient.patient.bedNumber}}</td>
+                        <td>{{patient.unresolvedMessagesCount}}</td>
+                        <td>
+                            <table style="margin-bottom:0"class="table">
+                                <tr style="padding:0px; margin:0px" ng-repeat="message in patient.messages">
+                                    <td>{{message.messageString}} - Requested: {{message.timeRequested}}</td>
+                                    <td><button ng-click="controller.dismissIncident(message.id)" class="btn btn-warning">Dismiss</button></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>

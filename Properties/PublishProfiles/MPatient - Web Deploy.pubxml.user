@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAQBri9pDZtkOHI3jlnZDcxAAAAAACAAAAAAAQZgAAAAEAACAAAADCVvt7J2dmM04OYFh8lkJ03R5jCigIX3Yvbo+MsNr17gAAAAAOgAAAAAIAACAAAADDOfvAsznTFYK4yZ19S4RUQi+TyzVMkQfiverfs4BZxoAAAAAXlDNdNJNMpYyql7p8oCJ9Kv/Paf+VN/9WSjYrdzPTSphy/1bfy6Qw3QQj28ERFw744/QUDIHSq2jFBnIszXK18LuKaSAo6teH5MMlk1FJFfXNLwSqXJwr0RTFXsDVxRMinwgUY1b/yXXpSFBDg1PT6amH4M8fWDpmbBAZv1USNEAAAACYfNAq07bSOk+m59hdhe8EQwvv7jXCQsReS5Wo58uK2hqHziKpEoxkXTaG12FeOXcAYd8ZTZJxOGni8XMrhLGA</EncryptedPassword>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DefaultConnection">
+      <Value>Data Source=tcp:hnfi1bgp4j.database.windows.net,1433;Initial Catalog=MPatient_db;User Id=mdm409psu@hnfi1bgp4j;Password=Eggplant1</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+  <ItemGroup>
+    <EfMigrations Include="PatientApp.Data.ApplicationDbContext">
+      <Value>Data Source=tcp:hnfi1bgp4j.database.windows.net,1433;Initial Catalog=MPatient_db;User Id=mdm409psu@hnfi1bgp4j;Password=Eggplant1</Value>
+    </EfMigrations>
+  </ItemGroup>
+</Project>

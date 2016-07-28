@@ -1,0 +1,21 @@
+﻿<section class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <fieldset>
+                <legend>Setup Patient Dashboard</legend>
+                <ul>
+                    <li ng-repeat="error in controller.validationMessages">
+                        {{error}}
+                    </li>
+                </ul>
+                <form ng-submit="controller.patientLogin()">
+                    <div>
+                        <label>Patient:</label>
+                        <select ng-model="controller.selectedPatient" ng-options="patients.applicationUser.firstName + ' ' + patients.applicationUser.lastName for patients in controller.patients track by patients.applicationUser.email" ng-change="controller.patients"></select>
+                    </div>
+                    <input type="submit" value="Login" />
+                </form>
+            </fieldset>
+        </div>
+    </div>
+</section>

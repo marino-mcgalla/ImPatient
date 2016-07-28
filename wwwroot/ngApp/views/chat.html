@@ -1,0 +1,13 @@
+﻿<section class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <select class="form-control" ng-model="controller.selectedNurse" ng-options="nurses.applicationUser.firstName + ' ' + nurses.applicationUser.lastName for nurses in controller.nurses track by nurses.applicationUser.email" ng-change="controller.nurses"></select>
+            <form ng-submit="controller.sendMessage()">
+                <input class="form-control" id="username" type="text" value="{{controller.nurseUser.applicationUser.firstName}}"><br />
+                <input class="form-control" id="text" type="text" placeholder="Message"><br />
+                <input class="btn btn-primary" id="post" type="submit" value="Post" /><br />
+            </form>
+            <div id="results"></div>
+        </div>
+    </div>
+</section>

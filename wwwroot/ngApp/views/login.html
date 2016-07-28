@@ -1,0 +1,30 @@
+<link href="../../css/site.css" rel="stylesheet" />
+<section class="container-fluid">
+    <div class="image">
+        <div class="transparentbox">
+            <fieldset class="text-center">
+                <legend>
+                    <h1 class="text-center">ImPatient</h1>
+                    <h3 class="text-center">Created by Jerry, Reno, and Sharon - Troop 9 (2016)</h3>
+                </legend>
+                <ul>
+                    <li class="error" ng-repeat="error in controller.validationMessages">
+                        {{error}}
+                    </li>
+                </ul>
+                <form ng-submit="controller.login()" class="container" style="width: 190px">
+                    <div>
+                        <label>Email:</label>
+                        <input ng-model="controller.loginUser.email" class="form-control" id="emailLogin" />
+                    </div>
+                    <div>
+                        <label>Password:</label>
+                        <input type="password" ng-model="controller.loginUser.password" class="form-control" />
+                    </div>
+                    <input type="submit" value="Login" class="btn btn-primary btn-group-justified" />
+                    <a href="/register" ng-show="account.getClaim('isAdmin')">Register New Admin</a>
+                </form>
+            </fieldset>
+        </div>
+    </div>
+</section>

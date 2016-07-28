@@ -1,0 +1,23 @@
+﻿<section class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Admin-View: All Nurses</h1>
+            <a href="/nurse/create">Register New Nurse</a>
+            <h2>Nurses</h2>
+            <table class="table table-bordered table-striped">
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Working Status</th>
+                    <th>Assigned Patients Activities</th>
+                </tr>
+                <tr ng-repeat="nurse in controller.nurses">
+                    <td>{{nurse.applicationUser.firstName}}</td>
+                    <td>{{nurse.applicationUser.lastName}}</td>
+                    <td>{{nurse.isActive}}</td>
+                    <td><input type="button" ng-click="controller.showDetailsDialog(nurse.applicationUser.id, nurse.id)" value="View Details" /></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</section>

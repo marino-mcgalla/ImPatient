@@ -1,0 +1,29 @@
+﻿<section class="container">
+
+    <table class="table table-bordered" id="firebaseTable">
+        <tr>
+            <th>Status</th>
+            <th>Patient</th>
+            <th>Room</th>
+            <th>Bed</th>
+            <th>Messages</th>
+            <th>Dismiss All</th>
+        </tr>
+        <tr ng-repeat="patient in nurse.patients">
+            <td><img style="height:100px" src="{{patient.icon}}" /></td>
+            <td>{{patient.firstName}} {{patient.lastName}}</td>
+            <td>{{patient.roomNumber}}</td>
+            <td>{{patient.bedNumber}}</td>
+            <td style="padding:0">
+                <table style="margin-bottom:0"class="table table-bordered">
+                    <tr style="padding:0px; margin:0px" ng-repeat="message in patient.messages">
+                        <td>
+                            <span style="font-weight: bold; font-size: 24px;">{{message.message}}</span> sent {{message.timeRequested | date:'medium'|timeAgo}} <button style="float:right" class="btn btn-warning" ng-click="controller.dismissFirebase(message.id, patient.firstName + patient.lastName)">Dismiss</button>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td><button class="btn btn-danger" ng-click="controller.dismissAll(patient.firstName + patient.lastName)">Dismiss All</button></td>
+        </tr>
+    </table>
+</section>

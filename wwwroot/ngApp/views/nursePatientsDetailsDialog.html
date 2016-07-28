@@ -1,0 +1,35 @@
+﻿<div class="row">
+    <div class="col-md-12">
+        <div class="modal-header">
+            <h1>{{controller.nurseName}}</h1>
+            <ul>
+                <li class="error" ng-repeat="err in controller.validationErrors">{{err}}</li>
+            </ul>
+        </div>
+        <div class="modal-body">
+            <table class="table table-bordered table-striped">
+                <tr>
+                    <th></th>
+                    <th>Room</th>
+                    <th>Bed</th>
+                    <th>Unresolved</th>
+                    <th>Messages</th>
+                </tr>
+                <tr ng-repeat="patient in controller.patientMessages">
+                    <td><img src="{{patient.imagePath}}" width="50" height="60" /></td>
+                    <td>{{patient.patient.roomNumber}}</td>
+                    <td>{{patient.patient.bedNumber}}</td>
+                    <td>{{patient.unresolvedMessagesCount}}</td>
+                    <td>
+                        <ol>
+                            <li ng-repeat="message in patient.messages">{{message.messageString}} - Requested at: {{message.timeRequested|date: 'shortDate'}}</li>
+                        </ol>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="modal-footer">
+            <input type="button" class="btn btn-block btn-primary" ng-click="controller.close()" value="Close" />
+        </div>
+    </div>
+</div>

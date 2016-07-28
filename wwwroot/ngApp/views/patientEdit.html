@@ -1,0 +1,64 @@
+﻿<section class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <ul>
+                <li ng-repeat="message in controller.validationMessages">{{message}}</li>
+            </ul>
+            <ul>
+                <li class="error" ng-repeat="err in controller.validationErrors">{{err}}</li>
+            </ul>
+        </div>
+        <div class="row">
+            <form novalidate ng-submit="controller.editPatient()" name="patientEditForm">
+                <div class="col-md-6">
+                    <h1>Edit Patient Info</h1>
+                    <div class="form-group">
+                        <label>Patient First Name</label>
+                        <input type="text" class="form-control" name="firstName" ng-model="controller.patient.applicationUser.firstName" />
+                    </div>
+                    <div class="form-group">
+                        <label>Patient Last Name</label>
+                        <input type="text" class="form-control" name="lastName" ng-model="controller.patient.applicationUser.lastName" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Date Checked-In</label>
+                        <input type="date" class="form-control" name="checkInDate" ng-model="controller.patient.checkInDate" />
+                    </div>
+                    <div class="form-group">
+                        <label>Date Checked-Out</label>
+                        <input type="date" class="form-control" name="checkOutDate" ng-model="controller.patient.checkOutDate" />
+                    </div>
+                    <div class="form-group">
+                        <label>Room Number</label>
+                        <input type="number" min="1" class="form-control" name="roomNumber" ng-model="controller.patient.roomNumber" />
+                    </div>
+                    <div class="form-group">
+                        <label>Bed Number</label>
+                        <input type="number" min="1" max="5" class="form-control" name="bedNumber" ng-model="controller.patient.bedNumber" />
+                    </div>
+                    <div class="form-group">
+                        <label>Dependency Level</label>
+                        <input type="number" min="1" class="form-control" name="dependency" ng-model="controller.patient.dependency" />
+                    </div>
+                    <div class="form-group">
+                        <h4>Primary Assigned Nurse: <em>{{controller.assignedNurse}}</em></h4><br />
+                        <label for="assignedNurse">Re-assign Nurse</label>
+                        <select name="assignedNurse" class="form-control" data-ng-model="controller.assignedNurseId" data-ng-value="{{nurse.id}}">
+                            <option ng-repeat="nurse in controller.nurses" value="{{nurse.id}}">{{nurse.applicationUser.firstName}}  {{nurse.applicationUser.lastName}}</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Notes</label>
+                        <textarea class="form-control" rows="7" name="notes" ng-model="controller.patient.notes"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-block btn-success" value="Save" />
+                        <input type="button" class="btn btn-block btn-primary" value="Cancel" ng-click="controller.cancel()" />
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
